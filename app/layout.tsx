@@ -1,3 +1,6 @@
+import { MultiStepSateContext } from './components/Context/StepStateContext'
+import { CurrentStepContext } from './components/Context/CurrentStepContext'
+import {PrimeReactProvider} from 'primereact/api'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 import './globals.css'
@@ -23,7 +26,13 @@ export default function RootLayout({
       <body
         className={`${ubuntu.variable} antialiased`}
       >
-        {children}
+        <MultiStepSateContext>
+          <CurrentStepContext>
+            <PrimeReactProvider value={{unstyled: true, pt: {}}}>
+              {children}
+            </PrimeReactProvider>
+          </CurrentStepContext>
+        </MultiStepSateContext>
       </body>
     </html>
   )
