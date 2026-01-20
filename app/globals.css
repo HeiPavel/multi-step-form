@@ -1,6 +1,12 @@
 @import "tailwindcss";
 
 @theme {
+  --font-ubuntu: var(--font-ubuntu);
+  --breakpoint-sm: 480px;
+  --breakpoint-tablet: 640px;
+  --breakpoint-md: 768px;
+  --breakpoint-laptop: 1024px;
+  --breakpoint-desktop: 1280px;
   --color-white: #ffffff;
   --color-white-blue-light: #fafbff;
   --color-white-blue: #f0f5ff;
@@ -11,4 +17,13 @@
   --color-blue-light: #bfe2fd;
   --color-blue-dark: #02295a;
   --color-red: #ed3548;
+  --drop-shadow-button: drop-shadow(2px 2px 4px rgba(191, 226, 253, 0.5)) drop-shadow(-2px -2px 4px rgba(191, 226, 253, 0.5));
+}
+
+@layer components {
+  @media (hover: hover) {
+    .navigation-button-shadow:enabled:hover {
+      filter: var(--drop-shadow-button);
+    }
+  }
 }
