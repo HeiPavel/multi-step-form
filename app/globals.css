@@ -9,14 +9,22 @@
   --breakpoint-desktop: 1280px;
   --color-white: #ffffff;
   --color-white-blue-light: #fafbff;
+  --color-white-blue-medium: #f6f7ff;
   --color-white-blue: #f0f5ff;
-  --color-purple-light: #d6d9e6;
-  --color-purple: #473dff;
+  --color-purple-light: #6259ff;
+  --color-purple-medium: #575196;
+  --color-purple: #938cfd;
+  --color-purple-dark: #4d3fd2;
   --color-grey: #9699ab;
+  --color-grey-medium: #a1a1ad;
+  --color-grey-light: #dbdade;
   --color-blue: #adbeff;
+  --color-blue-bright: #473dff;
   --color-blue-light: #bfe2fd;
+  --color-blue-medium: #174a8b;
   --color-blue-dark: #02295a;
   --color-red: #ed3548;
+  --color-black: #24334a;
   --drop-shadow-button: drop-shadow(2px 2px 4px rgba(191, 226, 253, 0.5)) drop-shadow(-2px -2px 4px rgba(191, 226, 253, 0.5));
 }
 
@@ -25,5 +33,18 @@
     .navigation-button-shadow:enabled:hover {
       filter: var(--drop-shadow-button);
     }
+  }
+
+  .input-autofill-bg:-webkit-autofill,
+  .input-autofill-bg:-webkit-autofill:hover,
+  .input-autofill-bg:-webkit-autofill:focus,
+  .input-autofill-bg:-webkit-autofill:active,
+  .input-autofill-bg:autofill,
+  .input-autofill-bg:autofill:hover,
+  .input-autofill-bg:autofill:focus,
+  .input-autofill-bg:autofill:active {
+    box-shadow: 0 0 0 1000px var(--color-white) inset;
+    -webkit-box-shadow: 0 0 0 1000px var(--color-white) inset;
+    -webkit-text-fill-color: var(--color-blue-dark);
   }
 }

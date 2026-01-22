@@ -1,7 +1,22 @@
 import type { NextConfig } from "next";
 
 const nextConfig: NextConfig = {
-  /* config options here */
-};
+  turbopack: {
+    rules: {
+      '*.icon.svg': {
+        loaders: [
+          {
+            loader: '@svgr/webpack',
+            options: {
+              exportType: 'named',
+              namedExport: 'ReactComponent'
+            }
+          }
+        ],
+        as: '*.js'
+      }
+    }
+  }
+}
 
 export default nextConfig;

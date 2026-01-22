@@ -3,6 +3,8 @@ import { CurrentStepContext } from './components/Context/CurrentStepContext'
 import {PrimeReactProvider} from 'primereact/api'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
+import { PrimeReactCustomStyles } from './util/primereactCustomStyles'
+import { twJoin } from 'tailwind-merge'
 import './globals.css'
 
 const ubuntu = Ubuntu({
@@ -24,11 +26,17 @@ export default function RootLayout({
   return (
     <html lang="en">
       <body
-        className={`${ubuntu.variable} antialiased`}
+        className={twJoin(
+          `${ubuntu.variable} antialiased`,
+          'laptop:py-10 desktop:py-6',
+          'min-h-screen',
+          'laptop:flex laptop:justify-center desktop:items-center',
+          'bg-white-blue font-ubuntu'
+        )}
       >
         <MultiStepSateContext>
           <CurrentStepContext>
-            <PrimeReactProvider value={{unstyled: true, pt: {}}}>
+            <PrimeReactProvider value={{unstyled: true, pt: PrimeReactCustomStyles}}>
               {children}
             </PrimeReactProvider>
           </CurrentStepContext>

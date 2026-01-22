@@ -1,13 +1,16 @@
 'use client'
 
-import { createContext, useState, ReactNode } from 'react'
+import { createContext, useState, ReactNode, Dispatch, SetStateAction } from 'react'
+import { defaultFormStepStateValue } from './StepStateContext'
 
 type CurrentStepContextType = {
+  isFormSubmited: boolean
   currentStep: number
-  setCurrentStep: (value: number) => void
+  setCurrentStep: Dispatch<SetStateAction<number>>
 }
 
 const defaultCurrentStepContextValue: CurrentStepContextType = {
+  isFormSubmited: false,
   currentStep: 0,
   setCurrentStep: () => undefined
 }
@@ -16,8 +19,10 @@ export const StepContext = createContext<CurrentStepContextType>(defaultCurrentS
 
 export function CurrentStepContext({children}: Readonly<{children: ReactNode}>) {
   const [currentStep, setCurrentStep] = useState(0)
+  const isFormSubmited = currentStep >= defaultFormStepStateValue.length
 
   const contextValue: CurrentStepContextType = {
+    isFormSubmited,
     currentStep,
     setCurrentStep
   }

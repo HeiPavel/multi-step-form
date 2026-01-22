@@ -1,6 +1,7 @@
 'use client'
 
 import { createContext, useState, ReactNode, Dispatch, SetStateAction } from 'react'
+import { stepsStateKey } from '@/app/hooks/useLocalStorage'
 
 type SetStepFormStateType = Dispatch<SetStateAction<MultiStepFormState>>
 
@@ -9,9 +10,9 @@ type FormStepStateContextType = {
   setStepsValidityState: SetStepFormStateType
 }
 
-const defaultFormStepStateValue: MultiStepFormState = [false, false, false, false]
+export const defaultFormStepStateValue: MultiStepFormState = [false, false, false, false]
 
-const defaultFormStepStateContextValue: FormStepStateContextType = {
+export const defaultFormStepStateContextValue: FormStepStateContextType = {
   stepsValidityState: defaultFormStepStateValue,
   setStepsValidityState: () => undefined
 }
@@ -22,7 +23,7 @@ export const FormStepStateContext = createContext<FormStepStateContextType>(defa
 
 const getInitialState = (): MultiStepFormState => {
   try {
-    const state = localStorage.getItem('stepState')
+    const state = localStorage.getItem(stepsStateKey)
     return state ? JSON.parse(state) : defaultFormStepStateValue
   } catch {
     return defaultFormStepStateValue
