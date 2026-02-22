@@ -3,6 +3,8 @@
 import { useFormContext } from 'react-hook-form'
 import { Price } from './Price'
 import { ProfitMessage } from './ProfitMessage'
+import { motion } from 'motion/react'
+import { fadeVariants } from '@/app/util/motionVariants'
 import { UserData } from '@/app/util/schema'
 import { ReactComponentType } from '../Types/Common'
 import { twJoin } from 'tailwind-merge'
@@ -17,7 +19,7 @@ export function RadioInput({value, price, Icon}: RadioInputProps) {
   const {register} = useFormContext<UserData>()
 
   return (
-    <label
+    <motion.label
       htmlFor={value}
       className={twJoin(
         'px-4 pt-4 pb-4 tablet:pb-7',
@@ -30,6 +32,7 @@ export function RadioInput({value, price, Icon}: RadioInputProps) {
         'transition-[background-color,border-color,filter] will-change-[filter] duration-300 ease-in-out',
         'cursor-pointer'
       )}
+      variants={fadeVariants}
     >
       <input
         id={value}
@@ -50,6 +53,6 @@ export function RadioInput({value, price, Icon}: RadioInputProps) {
           <ProfitMessage/>
         </div>
       </div>
-    </label>
+    </motion.label>
   )
 } 

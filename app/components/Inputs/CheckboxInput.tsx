@@ -2,6 +2,8 @@
 
 import { Checkbox } from 'primereact/checkbox'
 import { Price } from './Price'
+import { motion } from 'motion/react'
+import { fadeVariants } from '@/app/util/motionVariants'
 import { useFormContext, Controller } from 'react-hook-form'
 import { UserData } from '@/app/util/schema'
 import {ReactComponent as CheckmarkIcon} from '@/public/assets/icons/icon-checkmark.icon.svg'
@@ -36,7 +38,7 @@ export function CheckboxInput({value, price, title, description}: CheckboxInputP
   }
 
   return (
-    <label
+    <motion.label
       htmlFor={value}
       className={twJoin(
         'w-full px-4 tablet:px-6 h-15 tablet:h-20 rounded-lg',
@@ -48,6 +50,7 @@ export function CheckboxInput({value, price, title, description}: CheckboxInputP
         'transition-[background-color,border-color,filter] will-change-[filter] duration-300 ease-in-out',
         'cursor-pointer'
       )}
+      variants={fadeVariants}
     >
       <div className='flex items-center gap-4 tablet:gap-6'>
         <Controller
@@ -80,6 +83,6 @@ export function CheckboxInput({value, price, title, description}: CheckboxInputP
         textSize='small'
         isPlusSign={true}
       />
-    </label>
+    </motion.label>
   )
 }

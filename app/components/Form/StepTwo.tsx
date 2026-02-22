@@ -2,6 +2,8 @@
 
 import { RadioInput, RadioInputProps } from '../Inputs/RadioInput'
 import { SwitchInput } from '../Inputs/SwitchInput'
+import { motion } from 'motion/react'
+import { fadeVariants } from '@/app/util/motionVariants'
 import { planPrice, ServicePriceType } from '@/app/util/schema'
 import { ReactComponentType } from '../Types/Common'
 import {ReactComponent as ArcadeIcon} from '@/public/assets/icons/icon-arcade.icon.svg'
@@ -49,9 +51,12 @@ export function StepTwo() {
             ))
           }
         </div>
-        <div className='mt-6 tablet:mt-9 h-12 flex justify-center items-center bg-white-blue-medium rounded-md'>
+        <motion.div 
+          className='mt-6 tablet:mt-9 h-12 flex justify-center items-center bg-white-blue-medium rounded-md'
+          variants={fadeVariants}
+        >
           <SwitchInput/>
-        </div>
+        </motion.div>
       </div>
     </div>
   )

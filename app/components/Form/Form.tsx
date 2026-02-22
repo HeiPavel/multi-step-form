@@ -7,6 +7,7 @@ import { useForm, FormProvider, SubmitHandler } from 'react-hook-form'
 import { schema, UserData } from '@/app/util/schema'
 import { zodResolver } from '@hookform/resolvers/zod'
 import { Fieldset, FieldsetProps } from './Fieldset'
+import { motion, Transition } from 'motion/react'
 import { StepOne } from './StepOne'
 import { StepTwo } from './StepTwo'
 import { StepThree } from './StepThree'
@@ -51,6 +52,14 @@ const stepContent: StepContentType[] = [
   }
 ]
 
+const layoutTransitionOptions: Transition = {
+  duration: 0.5,
+  height: {
+    stiffness: 100
+  },
+  ease: 'easeInOut'
+}
+
 export const defaultValues: UserData = {
   name: '',
   email: '',
@@ -92,19 +101,28 @@ export function Form() {
 
   return (
     <FormProvider {...methods}>
-      <form 
+      <motion.form 
         className='laptop:w-113 max-laptop:grow flex flex-col justify-between items-center'
         onSubmit={handleSubmit(onSubmit)}
+        layout
+        transition={layoutTransitionOptions}
       >
         <div className='relative -top-18 sm:-top-26 tablet:-top-32 md:-top-40 laptop:top-0 max-tablet:px-4 w-full max-w-150'>
-          <div className='pt-7 laptop:pt-11 max-laptop:px-6 pb-8 bg-white rounded-xl max-laptop:shadow-xl'>
-            <Fieldset {...fieldsetProps}>
+          <motion.div 
+            className='pt-7 laptop:pt-11 max-laptop:px-6 pb-8 bg-white rounded-xl max-laptop:shadow-xl'
+            layout
+            transition={layoutTransitionOptions}
+          >
+            <Fieldset 
+              key={currentStep}
+              {...fieldsetProps}
+            >
               <Step/>
             </Fieldset>
-          </div>
+          </motion.div>
         </div>
         <Buttons/>
-      </form>
+      </motion.form>
       <UpdateStorage/>
       <UpdateFieldsValidity/>
     </FormProvider>
