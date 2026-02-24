@@ -57,6 +57,9 @@ const layoutTransitionOptions: Transition = {
   height: {
     stiffness: 100
   },
+  scaleY: {
+    stiffness: 100
+  },
   ease: 'easeInOut'
 }
 
@@ -109,8 +112,10 @@ export function Form() {
       >
         <div className='relative -top-18 sm:-top-26 tablet:-top-32 md:-top-40 laptop:top-0 max-tablet:px-4 w-full max-w-150'>
           <motion.div 
-            className='pt-7 laptop:pt-11 max-laptop:px-6 pb-8 bg-white rounded-xl max-laptop:shadow-xl'
+            className='pt-7 laptop:pt-11 max-laptop:px-6 pb-8 bg-white rounded-xl max-laptop:shadow-xl origin-top'
             layout
+            initial={{scaleY: 0.9}}
+            animate={{scaleY: 1}}
             transition={layoutTransitionOptions}
           >
             <Fieldset 
