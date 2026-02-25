@@ -2,6 +2,8 @@
 
 import { InputText } from 'primereact/inputtext'
 import { InputError } from './InputError'
+import { motion } from 'motion/react'
+import { fadeVariants } from '@/app/util/motionVariants'
 import { useFormContext, Controller } from 'react-hook-form'
 import { UserData } from '@/app/util/schema'
 import { ChangeEvent, InputEvent, ClipboardEvent } from 'react'
@@ -48,7 +50,7 @@ export function TextInput({type, name, label, placeholder}: TextInputProps) {
   }
 
   return (
-    <div>
+    <motion.div variants={fadeVariants}>
       <div className='flex flex-col gap-1 tablet:gap-2'>
         <label 
           htmlFor={name}
@@ -77,6 +79,6 @@ export function TextInput({type, name, label, placeholder}: TextInputProps) {
         name={name}
         errors={errors}
       />
-    </div>
+    </motion.div>
   )
 }

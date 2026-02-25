@@ -38,7 +38,7 @@ export const PrimeReactCustomStyles: PrimeReactPTOptions = {
         'cursor-pointer',
         'focus:outline-none focus:outline-offset-0',
         "before:absolute before:content-'' before:top-1/2 before:bg-white",
-        'before:size-3 before:left-1 before:-translate-y-1/2 before:rounded-full',
+        'before:size-3 before:left-1 before:-mt-1.5 before:rounded-full',
         'before:transition-transform before:duration-300 before:ease-in-out bg-blue-dark before:origin-left',
         {
           'before:transform before:translate-x-4.5': inputswitch?.props.checked
