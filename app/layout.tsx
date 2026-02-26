@@ -1,6 +1,7 @@
 import { MultiStepSateContext } from './components/Context/StepStateContext'
 import { CurrentStepContext } from './components/Context/CurrentStepContext'
 import {PrimeReactProvider} from 'primereact/api'
+import { getBaseUrl } from './util/getBaseUrl'
 import type { Metadata } from 'next'
 import { Ubuntu } from 'next/font/google'
 import { PrimeReactCustomStyles } from './util/primereactCustomStyles'
@@ -13,9 +14,21 @@ const ubuntu = Ubuntu({
   weight: ['400', '500', '700']
 })
 
+const project_url = new URL(getBaseUrl())
+
 export const metadata: Metadata = {
+  metadataBase: project_url,
   title: 'Multi Step Form',
-  description: 'Multi step form',
+  description: 'Multi-step form for entering personal details, selecting a plan, and choosing additional options with a smooth step-by-step experience.',
+  twitter: {
+    card: 'summary_large_image'
+  },
+  alternates: {
+    canonical: project_url
+  },
+  verification: {
+    google: 'zm1RyOb1pXk-onkAmaiQy3K6rIczA99wKk4vLZun4gg'
+  }
 }
 
 export default function RootLayout({

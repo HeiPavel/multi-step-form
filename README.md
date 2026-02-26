@@ -1,36 +1,30 @@
-This is a [Next.js](https://nextjs.org) project bootstrapped with [`create-next-app`](https://nextjs.org/docs/app/api-reference/cli/create-next-app).
+# Multi Step Form
+***
+Multi-step form for entering personal details, selecting a plan, and choosing additional options with a smooth step-by-step experience.
+## [Link](https://multi-step-form-green-ten-43.vercel.app/)
 
-## Getting Started
+## Motivation
+***
+* Build a multi-step form using advanced **React Hook Form** features (useFormContext, useWatch) with step-level and field-level validation, along with data initialization and persistence via LocalStorage
+* Integrate customizable input components (text, checkbox) using **PrimeReact** combined with Tailwind for flexible and consistent UI
+* Implement smooth, sequential step transitions using **Motion** to enhance user experience
 
-First, run the development server:
+## Technologies
+***
+* Next.js
+* React
+* TypeScript
+* HTML5
+* Tailwind
+* React Hook Form
+* React Hook Form Resolvers
+* Zod
+* Motion
+* Primereact
 
-```bash
-npm run dev
-# or
-yarn dev
-# or
-pnpm dev
-# or
-bun dev
-```
-
-Open [http://localhost:3000](http://localhost:3000) with your browser to see the result.
-
-You can start editing the page by modifying `app/page.tsx`. The page auto-updates as you edit the file.
-
-This project uses [`next/font`](https://nextjs.org/docs/app/building-your-application/optimizing/fonts) to automatically optimize and load [Geist](https://vercel.com/font), a new font family for Vercel.
-
-## Learn More
-
-To learn more about Next.js, take a look at the following resources:
-
-- [Next.js Documentation](https://nextjs.org/docs) - learn about Next.js features and API.
-- [Learn Next.js](https://nextjs.org/learn) - an interactive Next.js tutorial.
-
-You can check out [the Next.js GitHub repository](https://github.com/vercel/next.js) - your feedback and contributions are welcome!
-
-## Deploy on Vercel
-
-The easiest way to deploy your Next.js app is to use the [Vercel Platform](https://vercel.com/new?utm_medium=default-template&filter=next.js&utm_source=create-next-app&utm_campaign=create-next-app-readme) from the creators of Next.js.
-
-Check out our [Next.js deployment documentation](https://nextjs.org/docs/app/building-your-application/deploying) for more details.
+## Setup
+***
+* **git clone** {the url to the GitHub repo} or clone your own fork
+* **cd** into the new folder
+* **npm install**
+* To run locally: **npm run dev**
