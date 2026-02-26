@@ -25,6 +25,9 @@ export const metadata: Metadata = {
   },
   alternates: {
     canonical: project_url
+  },
+  verification: {
+    google: 'zm1RyOb1pXk-onkAmaiQy3K6rIczA99wKk4vLZun4gg'
   }
 }
 
