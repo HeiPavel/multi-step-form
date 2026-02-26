@@ -29,7 +29,7 @@ export function RadioInput({value, price, Icon}: RadioInputProps) {
         'border border-grey-light hover:border-blue-dark hover:drop-shadow-xl/15',
         'has-checked:bg-white-blue-medium has-checked:border-blue-dark',
         'has-checked:drop-shadow-lg/25 tablet:has-checked:drop-shadow-xl/30',
-        'transition-[background-color,border-color,filter] will-change-[filter] duration-300 ease-in-out',
+        'transition-[background-color,border-color,filter] will-change-[filter,transform] duration-300 ease-in-out',
         'cursor-pointer'
       )}
       variants={fadeVariants}
