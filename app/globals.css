@@ -2,6 +2,7 @@
 
 @theme {
   --font-ubuntu: var(--font-ubuntu);
+  --breakpoint-xs: 360px;
   --breakpoint-sm: 480px;
   --breakpoint-tablet: 640px;
   --breakpoint-md: 768px;

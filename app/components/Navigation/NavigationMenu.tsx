@@ -15,7 +15,7 @@ export function NavigationMenu() {
   return (
     <div 
       className={twJoin(
-        'relative max-laptop:aspect-375/172 laptop:w-68 laptop:h-full',
+        'relative xs:max-laptop:aspect-375/172 laptop:w-68 max-xs:h-43 laptop:h-full',
         'laptop:py-10 laptop:px-8',
         'laptop:rounded-xl overflow-hidden'
       )}
