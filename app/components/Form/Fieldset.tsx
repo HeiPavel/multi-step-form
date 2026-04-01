@@ -30,12 +30,14 @@ export function Fieldset({legend, description, children}: FieldsetProps) {
           'font-bold text-blue-dark'
         )}
         variants={fadeVariants}
+        layout
       >
         {legend}
       </motion.legend>
       <motion.p 
         className='mt-3 tablet:mt-4 tablet:leading-4 text-grey-medium'
         variants={fadeVariants}
+        layout
       >
         {description}
       </motion.p>

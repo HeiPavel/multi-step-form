@@ -50,7 +50,10 @@ export function TextInput({type, name, label, placeholder}: TextInputProps) {
   }
 
   return (
-    <motion.div variants={fadeVariants}>
+    <motion.div 
+      layout='position'
+      variants={fadeVariants}
+    >
       <div className='flex flex-col gap-1 tablet:gap-2'>
         <label 
           htmlFor={name}

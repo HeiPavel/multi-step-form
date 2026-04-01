@@ -11,7 +11,7 @@ type InputErrorProp = {
 
 export function InputError({name, errors}: InputErrorProp) {
   return (
-    <div className='mt-1 h-3.5'>
+    <div className='mt-1 min-h-4'>
       <ErrorMessage
         name={name}
         errors={errors}
